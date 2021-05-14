@@ -1,0 +1,40 @@
+<section class="hero py-16 bg-gray-100">
+  <div class="container mx-auto flex items-center justify-between">
+    <div class="w-1/2">
+      <h2 class="text-lg lg:text-2xl">In this Summer, Drink some healthy.</h2>
+      <h3 class="font-bold text-5xl lg:text-9xl font-bold">liquids</h3>
+      <button
+        class="lg:mt-8 px-6 py-2 rounded-lg bg-indigo-600 text-white font-bold mt-4 btn-primary"
+      >
+        Explore Now
+      </button>
+    </div>
+    <div class="w-1/2">
+      <img src="/img/hero.png" alt="" />
+    </div>
+  </div>
+</section>
+<section class="menu container mx-auto py-16">
+  <h1 class="text-3xl font-bold mb-8 text-center">All Juices</h1>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-8">
+    <% pizzas.forEach(function(pizza) { %>
+    <div class="w-full bg-gray-100 py-12 shadow-xl rounded-lg">
+      <img class="h-40 mb-4 mx-auto" src="/img/<%= pizza.image %>" alt="" />
+      <div class="text-center">
+        <h2 class="mb-2 text-2xl font-bold"><%= pizza.name %></h2>
+        <span class="size py-1 px-16 text-md">300 ml</span>
+        <div class="flex items-center justify-around mt-6">
+          <span class="font-bold text-4xl">₹<%= pizza.price %></span>
+          <button
+            data-pizza="<%= JSON.stringify(pizza) %>"
+            class="add-to-cart py-1 px-3 rounded-lg flex items-center font-bold"
+          >
+            <span>+</span>
+            <span class="ml-2">Add</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <% }) %>
+  </div>
+</section>
